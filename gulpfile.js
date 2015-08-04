@@ -101,7 +101,7 @@ gulp.task('ts-compile', function () {
   return tsResult.js.pipe(isDist ? $.concat('app.js') : $.util.noop())
     .pipe($.ngAnnotate({gulpWarnings: false}))
     .pipe(isDist ? $.uglify() : $.util.noop())
-    .pipe($.wrap({ src: './iife.txt'}))
+    //.pipe($.wrap({ src: './iife.txt'}))
     .pipe(gulp.dest(destinations.js))
     .pipe(browserSync.reload({stream: true}));
 });

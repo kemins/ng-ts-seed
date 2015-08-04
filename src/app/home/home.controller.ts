@@ -1,22 +1,21 @@
+/// <reference path="../core/types.ts"/>
 /// <reference path="../../types/types.ts"/>
 
-module Home {
+namespace home {
 
     export class HomeCtrl {
 
-        pageTitle: string;
-        userName: string;
+        user: models.User;
 
         /* @ngInject */
-        constructor(private $scope: IHomeScope, homeService: services.IHomeService) {
-            this.pageTitle = "Home page!";
+        constructor(private $scope: IHomeScope, private homeService: services.IHomeService) {
+            this.user = new models.User();
         }
 
         sayHello(): void {
-            alert("Hello " + this.userName);
+            this.homeService.greet(this.user);
         }
     }
-
     export interface IHomeScope extends ng.IScope {
         homeCtrl: HomeCtrl;
     }
@@ -25,5 +24,5 @@ module Home {
 angular
     .module("home.controller", ['home.services'
     ])
-    .controller("HomeCtrl", Home.HomeCtrl);
+    .controller("HomeCtrl", home.HomeCtrl);
 

@@ -1,10 +1,10 @@
-/// <reference path="../../types/types.ts"/>
+/// <reference path="../core/types.ts"/>
+/// <reference path="../../types//types.ts"/>
 
 class HomeService implements services.IHomeService {
 
-  fetchSlides(): Array<models.Slide> {
-    var res: Array<models.Slide> = [];
-    return res;
+  greet(user: models.User): void{
+    alert(user.name);
   }
 }
 
