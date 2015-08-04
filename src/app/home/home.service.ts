@@ -1,18 +1,14 @@
 /// <reference path="../../types/types.ts"/>
 
-class HomeService implements core.IHomeService {
-  private logGreeting(greeting: string) {
-    console.log("Received greeting: " + greeting);
-  }
+class HomeService implements services.IHomeService {
 
-  getGreeting(greeting) {
-    this.logGreeting(greeting);
-    // do something else
-    return {"greeting": greeting};
+  fetchSlides(): Array<models.Slide> {
+    var res: Array<models.Slide> = [];
+    return res;
   }
 }
 
 
 angular
   .module("home.services", [])
-  .service("HomeService", HomeService);
+  .service("homeService", HomeService);

@@ -1,23 +1,29 @@
 /// <reference path="../../types/types.ts"/>
 
+module Home {
 
-class HomeController {
-  greeting: string;
-  times: number;
+    export class HomeCtrl {
 
-  /* @ngInject */
-  constructor(
-    private $rootScope: core.IRootScope,
-    private HomeService: core.IHomeService
-  ) {
-    $rootScope.pageTitle = "Hello";
-    this.times = 1;
-    this.greeting = HomeService.getGreeting("Hello").greeting;
-  }
+        pageTitle: string;
+        userName: string;
+
+        /* @ngInject */
+        constructor(private $scope: IHomeScope, homeService: services.IHomeService) {
+            this.pageTitle = "Home page!";
+        }
+
+        sayHello(): void {
+            alert("Hello " + this.userName);
+        }
+    }
+
+    export interface IHomeScope extends ng.IScope {
+        homeCtrl: HomeCtrl;
+    }
 }
 
 angular
-  .module("home.index", [
-    "home.services"
-  ])
-  .controller("HomeController", HomeController);
+    .module("home.controller", ['home.services'
+    ])
+    .controller("HomeCtrl", Home.HomeCtrl);
+

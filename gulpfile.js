@@ -11,7 +11,7 @@ var outputFolder = isDist ? 'dist' : 'build';
 
 var globs = {
   sass: 'src/style/**/*.scss',
-  templates: 'src/templates/**/*.html',
+  templates: 'src/templates/**/*.tpl.html',
   assets: 'src/assets/**/*.*',
   app: 'src/app/**/*.ts',
   // karma typescript preprocessor generates a bunch of .ktp.ts which gets picked
@@ -32,8 +32,11 @@ var destinations = {
 // When adding a 3rd party we want to insert in the html, add it to
 // vendoredLibs, order matters
 var vendoredLibs = [
+  'vendor/jquery/dist/jquery.js',
   'vendor/angular/angular.js',
   'vendor/ui-router/release/angular-ui-router.js',
+  'vendor/bootstrap-sass/assets/javascripts/bootstrap.js',
+  'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js'
 ];
 
 // Will be filled automatically

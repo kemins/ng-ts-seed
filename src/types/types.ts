@@ -8,3 +8,5 @@
 
 // APP TYPES
 /// <reference path="app/core.ts"/>
+/// <reference path="app/models.ts"/>
+/// <reference path="app/services.ts"/>

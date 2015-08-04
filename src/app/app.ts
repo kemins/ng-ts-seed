@@ -10,6 +10,7 @@ angular
   .module("ngBoilerplate", [
     "templates",
     "ngBoilerplate.home",
-    "ui.router.state"
+    "ui.router.state",
+    "ui.bootstrap"
   ])
   .config(appConfig);
