@@ -35,5 +35,8 @@
     "sinon": "^1.12.1",
     "sinon-chai": "^2.6.0",
     "typescript": "^1.4.1"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^1.5.2"
   }
 }

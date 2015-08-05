@@ -1,11 +1,12 @@
 /// <reference path="../../types/types.ts" />
+namespace home {
 
-function postfix(): ng.IDirective {
+  export function postfix(): ng.IDirective {
     var link = function(
-      scope: ng.IScope,
-      element: ng.IAugmentedJQuery,
-      attrs: ng.IAttributes,
-      controller: any
+        scope: ng.IScope,
+        element: ng.IAugmentedJQuery,
+        attrs: ng.IAttributes,
+        controller: any
     ) {
       var postfixValue = attrs["ngbPostfix"];
 
@@ -32,7 +33,8 @@ function postfix(): ng.IDirective {
       link: link
     };
   }
+}
 
 angular
   .module("home.directives", [])
-  .directive("ngbPostfix", postfix);
+  .directive("ngbPostfix", home.postfix);

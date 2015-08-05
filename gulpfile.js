@@ -3,6 +3,7 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var karma = require('karma').server;
 var browserSync = require('browser-sync');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 // VARIABLES ======================================================
@@ -75,7 +76,8 @@ vendoredLibs.forEach(function(lib) {
 
 var tsProject = $.typescript.createProject({
   declarationFiles: true,
-  noExternalResolve: true
+  noExternalResolve: true,
+  sortOutput: true
 });
 
 // TASKS ===========================================================
@@ -96,14 +98,17 @@ gulp.task('ts-lint', function () {
 
 gulp.task('ts-compile', function () {
   var tsResult = gulp.src(globs.appWithDefinitions)
-    .pipe($.typescript(tsProject));
+      .pipe(sourcemaps.init())
+      .pipe($.typescript(tsProject));
 
   return tsResult.js.pipe(isDist ? $.concat('app.js') : $.util.noop())
-    .pipe($.ngAnnotate({gulpWarnings: false}))
-    .pipe(isDist ? $.uglify() : $.util.noop())
+      .pipe($.ngAnnotate({gulpWarnings: false}))
+      .pipe(isDist ? $.uglify() : $.util.noop())
     //.pipe($.wrap({ src: './iife.txt'}))
-    .pipe(gulp.dest(destinations.js))
-    .pipe(browserSync.reload({stream: true}));
+      .pipe(sourcemaps.write("../maps", {includeContent: false, sourceRoot: '/boilerplate/src'}))
+      .pipe(gulp.dest(destinations.js))
+      .pipe(browserSync.reload({stream: true}));
+
 });
 
 gulp.task('templates', function () {

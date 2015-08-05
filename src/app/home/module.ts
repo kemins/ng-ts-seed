@@ -1,12 +1,15 @@
 /// <reference path="../../types/types.ts"/>
 
-/* @ngInject */
-function homeConfig($stateProvider: ng.ui.IStateProvider) {
-    $stateProvider.state("home", {
-        url: "/home",
-        controller: "HomeCtrl as homeCtrl",
-        templateUrl: "home/home.tpl.html"
-    });
+
+namespace home {
+    /* @ngInject */
+    export function homeConfig($stateProvider: ng.ui.IStateProvider) {
+        $stateProvider.state("home", {
+            url: "/home",
+            controller: "HomeCtrl as homeCtrl",
+            templateUrl: "home/home.tpl.html"
+        });
+    }
 }
 
 angular
@@ -15,4 +18,4 @@ angular
         "home.directives",
         "ui.router.state"
     ])
-    .config(homeConfig);
+    .config(home.homeConfig);
