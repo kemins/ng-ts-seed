@@ -16,7 +16,7 @@ namespace home {
 }
 
 angular
-    .module("ngBoilerplate.home", [
+    .module("boilerplate.home", [
         "home.controller",
         "home.directives",
         "ui.router.state"

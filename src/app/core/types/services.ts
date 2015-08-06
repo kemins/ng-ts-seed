@@ -1,6 +1,6 @@
 /// <reference path="types.ts"/>
 
-namespace services {
+namespace boilerplate.services {
 
     export interface IHomeService {
         greet(user: models.User): void;

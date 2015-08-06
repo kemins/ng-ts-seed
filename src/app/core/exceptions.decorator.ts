@@ -1,7 +1,7 @@
 /// <reference path="../../type-definitions/typings/tsd.d.ts"/>
 
 angular
-  .module("ngBoilerplate")
+  .module("boilerplate")
   .config(exceptionDecorator);
 
 /* @ngInject */

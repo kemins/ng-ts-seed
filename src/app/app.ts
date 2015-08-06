@@ -1,20 +1,23 @@
 /// <reference path="../type-definitions/typings/tsd.d.ts"/>
 /// <reference path="core/types/types.ts"/>
 
+namespace boilerplate.app {
 
-/* @ngInject */
-function appConfig($urlRouterProvider:ng.ui.IUrlRouterProvider) {
-    $urlRouterProvider.otherwise("/home");
+    /* @ngInject */
+    export function appConfig($urlRouterProvider:ng.ui.IUrlRouterProvider) {
+        $urlRouterProvider.otherwise("/home");
+    }
 }
 
 angular
-    .module("ngBoilerplate", [
+    .module("boilerplate", [
         "templates",
         "navigation",
         "boilerplate.app.controller",
-        "ngBoilerplate.home",
+        'boilerplate.app.services',
+        "boilerplate.home",
         "ui.router.state",
         "ui.bootstrap",
         'restangular'
     ])
-    .config(appConfig);
+    .config(boilerplate.app.appConfig);

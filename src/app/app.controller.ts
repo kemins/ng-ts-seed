@@ -74,13 +74,6 @@ namespace boilerplate.app.controller {
             this.$modalInstance.dismiss('cancel');
         }
     }
-
-    /*export function LocalRestangular(Restangular) {
-     return Restangular.withConfig(function (RestangularConfigurer) {
-     RestangularConfigurer.setBaseUrl('.');
-     RestangularConfigurer.setRequestSuffix('.json');
-     });
-     }*/
 }
 
 angular

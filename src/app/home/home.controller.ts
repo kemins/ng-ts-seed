@@ -8,7 +8,7 @@ namespace home {
         user: models.User;
 
         /* @ngInject */
-        constructor(private $scope: IHomeScope, private homeService: services.IHomeService) {
+        constructor(private $scope: IHomeScope, private homeService: boilerplate.services.IHomeService) {
             this.user = new models.User();
         }
 
