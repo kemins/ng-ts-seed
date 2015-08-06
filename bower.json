@@ -12,6 +12,9 @@
     "ui-router": "~0.2.13",
     "jquery": "~2.1.4",
     "angular-bootstrap": "~0.13.2",
-    "bootstrap-sass": "~3.3.5"
+    "bootstrap-sass": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "restangular": "~1.5.1",
+    "underscore": "~1.8.3"
   }
 }

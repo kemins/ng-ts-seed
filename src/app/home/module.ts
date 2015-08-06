@@ -1,4 +1,4 @@
-/// <reference path="../../types/types.ts"/>
+/// <reference path="../../type-definitions/typings/tsd.d.ts"/>
 
 
 namespace home {
@@ -7,7 +7,10 @@ namespace home {
         $stateProvider.state("home", {
             url: "/home",
             controller: "HomeCtrl as homeCtrl",
-            templateUrl: "home/home.tpl.html"
+            templateUrl: "home/home.tpl.html",
+            data: {
+                pageTitle: "Home"
+            }
         });
     }
 }

@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="ngBoilerplate" ng-strict-di>
-  <head>
+<html ng-app="ngBoilerplate" ng-strict-di ng-controller="AppCtrl">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title ng-bind="pageTitle + ' | ngBoilerplate'"></title>
+    <title ng-bind="pageTitle + ' | Project Name'"></title>
     <!-- inject:css -->
     <!-- endinject -->
 
     <!-- inject:js -->
     <!-- endinject -->
-  </head>
+</head>
 
-  <body>
-    <div ui-view></div>
-  </body>
+<body>
+
+<navigation-bar></navigation-bar>
+
+<div class="page-wrap">
+    <div ui-view class="view"></div>
+</div>
+
+<footer-bar></footer-bar>
+
+</body>
 
 </html>

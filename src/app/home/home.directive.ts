@@ -1,4 +1,4 @@
-/// <reference path="../../types/types.ts" />
+/// <reference path="../../type-definitions/typings/tsd.d.ts"/>
 namespace home {
 
   export function postfix(): ng.IDirective {

@@ -1,5 +1,5 @@
-/// <reference path="../core/types.ts"/>
-/// <reference path="../../types//types.ts"/>
+/// <reference path="../core/types/types.ts"/>
+/// <reference path="../../type-definitions/typings/tsd.d.ts"/>
 
 namespace home {
   export class HomeService implements services.IHomeService {

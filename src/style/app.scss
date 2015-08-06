@@ -3,4 +3,127 @@
 @import "normalize";
 
 @import '../../vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import 'navigation.scss';
 // Import your framework/app below
+
+
+@import '../../vendor/font-awesome/scss/font-awesome.scss';
+
+/**
+ * This is our main variables file. We must include it last so we can overwrite any variable
+ * definitions in our imported stylesheets.
+ */
+@import 'variables.scss';
+
+
+
+/**
+* Core mixins
+*/
+@mixin setTransition($transition) {
+  transition: $transition;
+  -ms-transition: $transition;
+  -webkit-transition: $transition;
+  -moz-transition: translate($transition);
+
+}
+
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+html, body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  form {
+    padding-top: 5px;
+  }
+}
+
+body {
+  color: #5a5a5a;
+
+  .page-wrap {
+    min-height: 100%;
+    margin-bottom: -$footer-height;
+
+    > .view {
+      padding-top: $navbar-height;
+    }
+  }
+
+  .page-wrap:after {
+    content: "";
+    display: block;
+    height: $footer-height;
+  }
+
+}
+navigation-bar {
+  position: absolute;
+  width: 100%;
+}
+
+footer-bar {
+  height: $footer-height;
+}
+
+ng-messages {
+  color: $validation-color;
+}
+
+ng-messages > div {
+  padding-top: 10px;
+  font-style: italic;
+}
+
+.boxed {
+  padding: 0.75em;
+  border: 1px solid $border-color;
+}
+
+.status-icon {
+  color: $default-icon-color;
+}
+
+.view {
+  margin: 0;
+}
+
+.view.ng-animate {
+}
+
+.view.ng-leave {
+}
+
+.view.ng-leave.ng-leave-active {
+}
+
+.view.ng-enter {
+  @include setTransition(1.5s ease-in-out);
+  opacity: 0;
+}
+
+.view.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+
+.expanded-container {
+  width: 100%;
+  height: 100%;
+}
+
+@import 'navigation.scss';
+
+
+
+/*@import 'callouts.less';
+@import '../app/home/home.less';
+@import '../app/signup/signup.less';
+@import '../app/signin/signin.less';
+@import '../common/feedbacks/feedbacks.less';*/
+

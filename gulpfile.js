@@ -37,7 +37,9 @@ var vendoredLibs = [
   'vendor/angular/angular.js',
   'vendor/ui-router/release/angular-ui-router.js',
   'vendor/bootstrap-sass/assets/javascripts/bootstrap.js',
-  'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js'
+  'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+  'vendor/restangular/src/restangular.js',
+  'vendor/underscore/underscore.js'
 ];
 
 // Will be filled automatically
