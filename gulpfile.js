@@ -48,7 +48,13 @@ var vendorAssets = [
   'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.swg',
   'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf',
   'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff',
-  'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2'
+  'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2',
+  'vendor/font-awesome/fonts/FontAwesome.otf',
+  'vendor/font-awesome/fonts/fontawesome-webfont.eot',
+  'vendor/font-awesome/fonts/fontawesome-webfont.svg',
+  'vendor/font-awesome/fonts/fontawesome-webfont.ttf',
+  'vendor/font-awesome/fonts/fontawesome-webfont.woff',
+  'vendor/font-awesome/fonts/fontawesome-webfont.woff2'
 ];
 
 // Will be filled automatically
