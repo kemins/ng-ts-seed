@@ -7,7 +7,6 @@ namespace boilerplate.app.controller {
         appCtrl: AppCtrl;
         pageSysName: string;
         pageTitle: string;
-        INPUT_MAX_CHARS: number;
     }
 
     export interface ITermsScope extends IAppScope {
@@ -27,9 +26,6 @@ namespace boilerplate.app.controller {
                     $scope.pageSysName = toState.data.name;
                 }
             });
-
-
-            $scope.INPUT_MAX_CHARS = 255;//appConfig.inputMaxChars;
         }
 
         openModalWindow(options: widgets.IPopupWindow) {

@@ -3,8 +3,6 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var karma = require('karma').server;
 var browserSync = require('browser-sync');
-var sourcemaps = require('gulp-sourcemaps');
-var flatten = require('gulp-flatten');
 
 
 // VARIABLES ======================================================
@@ -20,7 +18,8 @@ var globs = {
   // up by the watch, rinse and repeat
   appWithDefinitions: ['src/**/*.ts', '!src/**/*.ktp.*'],
   integration: 'src/tests/integration/**/*.js',
-  index: 'src/index.html'
+  index: 'src/index.html',
+  srcPathForMaps: '/boilerplate/src',
 };
 
 var destinations = {
@@ -31,8 +30,7 @@ var destinations = {
   index: outputFolder
 };
 
-// When adding a 3rd party we want to insert in the html, add it to
-// vendoredLibs, order matters
+//All bower dependencies here in proper order
 var vendoredLibs = [
   'vendor/jquery/dist/jquery.js',
   'vendor/angular/angular.js',
@@ -43,6 +41,7 @@ var vendoredLibs = [
   'vendor/underscore/underscore.js',
   'vendor/angular-sanitize/angular-sanitize.js'
 ];
+
 
 var vendorAssets = [
   'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot',
@@ -110,14 +109,14 @@ gulp.task('ts-lint', function () {
 
 gulp.task('ts-compile', function () {
   var tsResult = gulp.src(globs.appWithDefinitions)
-      .pipe(sourcemaps.init())
+      .pipe($.sourcemaps.init())
       .pipe($.typescript(tsProject));
 
   return tsResult.js.pipe(isDist ? $.concat('app.js') : $.util.noop())
       .pipe($.ngAnnotate({gulpWarnings: false}))
       .pipe(isDist ? $.uglify() : $.util.noop())
     //.pipe($.wrap({ src: './iife.txt'}))
-      .pipe(sourcemaps.write("../maps", {includeContent: false, sourceRoot: '/boilerplate/src'}))
+      .pipe($.sourcemaps.write("../maps", {includeContent: false, sourceRoot: globs.srcPathForMaps}))
       .pipe(gulp.dest(destinations.js))
       .pipe(browserSync.reload({stream: true}));
 
@@ -171,7 +170,7 @@ gulp.task('copy-assets', function () {
 
 gulp.task('copy-vendor-fonts', function () {
   return gulp.src(vendorAssets, {base: './'})
-  .pipe(flatten())
+  .pipe($.flatten())
   .pipe(gulp.dest(destinations.assets));
 });
 

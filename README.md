@@ -1,5 +1,3 @@
-So in short you get:
-
 - automatic SASS compilation using libsass  with auto-prefixing
 - automatic DI annotation (via ng-annotate, no need for .$inject)
 - automatic typescript linting and compilation (+ concatenation and minification on dist environment)
@@ -13,7 +11,8 @@ So in short you get:
 ## Install
 
 - npm -g install bower
-- npm -g install bower gulp
+- npm -g install gulp
+- npm -g install typescript
 - bower install
 - npm install
 - ./node_modules/.bin/webdriver-manager update
