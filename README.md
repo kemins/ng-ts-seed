@@ -24,33 +24,6 @@ To get running run the following:
 
 
 
-
-## Structure
-
-project-home/
-  |- src/
-  |  |- app/
-  |  |  |- <app logic>
-  |  |- assets/
-  |  |  |- <static files>
-  |  |- style/
-  |  |  |- **/*.scss
-  |  |- templates/
-  |  |  |- **/*.tpl.html
-  |  |- tests/
-  |  |  |- unit
-  |  |  |  |- **/*.js
-  |  |  |- integration
-  |  |  |  |- **/*.js
-  |  |- type-definitions/
-  |  |  |  |- **/*.d.ts
-  |- vendor/
-  |  |- angular/
-  |  |- ui-router/
-  |  |- ****
-  |- gulpfile.js
-
-
 ## Tasks
 This uses gulp (http://gulpjs.com/) so you can call any of the tasks defined in the gulpfile.
 The default one watches over the files and runs the associated tasks when needed and is called like this:
