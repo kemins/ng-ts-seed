@@ -1,6 +1,6 @@
-/// <reference path="../type-definitions/typings/tsd.d.ts"/>
+/// <reference path="../../type-definitions/typings/tsd.d.ts"/>
 
-namespace boilerplate.app.service {
+namespace boilerplate.core.service {
 
     /* @ngInject */
     export function localRestangular(Restangular: restangular.IService) {
@@ -12,7 +12,7 @@ namespace boilerplate.app.service {
 }
 
 angular
-    .module("boilerplate.app.services", [
+    .module("boilerplate.core.services", [
         'restangular'
     ])
-    .factory('localRestangular', boilerplate.app.service.localRestangular);
+    .factory('localRestangular', boilerplate.core.service.localRestangular);

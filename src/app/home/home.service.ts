@@ -9,10 +9,6 @@ namespace home {
 
     }
 
-    greet(user: boilerplate.models.User): void{
-      alert(user.name);
-    }
-
     getPageContent(): angular.IPromise<any> {
       return this.localRestangular.one('assets').customGET('slides/slides-data');
     }

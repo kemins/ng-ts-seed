@@ -6,7 +6,7 @@ namespace home {
     export function homeConfig($stateProvider: ng.ui.IStateProvider) {
         $stateProvider.state("home", {
             url: "/home",
-            controller: "HomeCtrl as homeCtrl",
+            controller: "HomeCtrl",
             templateUrl: "home/home.tpl.html",
             data: {pageTitle: 'Home', name: 'home'},
             resolve: {
