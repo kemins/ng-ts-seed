@@ -15,4 +15,4 @@ angular
     .module("boilerplate.app.services", [
         'restangular'
     ])
-    .factory('LocalRestangular', boilerplate.app.service.localRestangular);
+    .factory('localRestangular', boilerplate.app.service.localRestangular);

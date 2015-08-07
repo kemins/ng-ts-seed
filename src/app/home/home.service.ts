@@ -4,13 +4,22 @@
 namespace home {
   export class HomeService implements boilerplate.services.IHomeService {
 
-    greet(user: models.User): void{
+    /* @ngInject */
+    constructor(private localRestangular: restangular.IService) {
+
+    }
+
+    greet(user: boilerplate.models.User): void{
       alert(user.name);
+    }
+
+    getPageContent(): angular.IPromise<any> {
+      return this.localRestangular.one('assets').customGET('slides/slides-data');
     }
   }
 }
 
 
 angular
-  .module("home.services", [])
+  .module("home.services", ['restangular'])
   .service("homeService", home.HomeService);

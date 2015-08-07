@@ -43,7 +43,7 @@ project-home/
   |  |  |  |- **/*.js
   |  |  |- integration
   |  |  |  |- **/*.js
-  |  |- types/
+  |  |- type-definitions/
   |  |  |  |- **/*.d.ts
   |- vendor/
   |  |- angular/

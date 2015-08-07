@@ -15,6 +15,7 @@ angular
         "navigation",
         "boilerplate.app.controller",
         'boilerplate.app.services',
+        'boilerplate.app.filters',
         "boilerplate.home",
         "ui.router.state",
         "ui.bootstrap",

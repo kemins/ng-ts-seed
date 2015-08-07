@@ -37,6 +37,7 @@
     "typescript": "^1.4.1"
   },
   "dependencies": {
+    "gulp-flatten": "^0.1.1",
     "gulp-sourcemaps": "^1.5.2"
   }
 }

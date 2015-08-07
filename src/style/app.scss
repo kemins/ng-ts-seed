@@ -2,18 +2,14 @@
 
 @import "normalize";
 
+@import 'variables.scss';
+
 @import '../../vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-@import 'navigation.scss';
+@import '../../vendor/font-awesome/scss/font-awesome.scss';
 // Import your framework/app below
 
 
-@import '../../vendor/font-awesome/scss/font-awesome.scss';
-
-/**
- * This is our main variables file. We must include it last so we can overwrite any variable
- * definitions in our imported stylesheets.
- */
-@import 'variables.scss';
+@import 'navigation.scss';
 
 
 

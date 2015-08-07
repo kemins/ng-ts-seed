@@ -4,6 +4,7 @@ var del = require('del');
 var karma = require('karma').server;
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
+var flatten = require('gulp-flatten');
 
 
 // VARIABLES ======================================================
@@ -39,7 +40,16 @@ var vendoredLibs = [
   'vendor/bootstrap-sass/assets/javascripts/bootstrap.js',
   'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
   'vendor/restangular/src/restangular.js',
-  'vendor/underscore/underscore.js'
+  'vendor/underscore/underscore.js',
+  'vendor/angular-sanitize/angular-sanitize.js'
+];
+
+var vendorAssets = [
+  'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot',
+  'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.swg',
+  'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf',
+  'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff',
+  'vendor/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2'
 ];
 
 // Will be filled automatically
@@ -159,6 +169,12 @@ gulp.task('copy-assets', function () {
     .pipe(gulp.dest(destinations.assets));
 });
 
+gulp.task('copy-vendor-fonts', function () {
+  return gulp.src(vendorAssets, {base: './'})
+  .pipe(flatten())
+  .pipe(gulp.dest(destinations.assets));
+});
+
 gulp.task('index', function () {
   var target = gulp.src(globs.index);
   var _injectPaths = isDist ? injectPaths.dist : injectPaths.dev;
@@ -183,7 +199,7 @@ gulp.task(
   'build',
   gulp.series(
     'clean',
-    gulp.parallel('sass', 'copy-assets', 'ts-compile', 'templates', 'copy-vendor'),
+    gulp.parallel('sass', 'copy-assets', 'copy-vendor-fonts', 'ts-compile', 'templates', 'copy-vendor'),
     'index'
   )
 );
